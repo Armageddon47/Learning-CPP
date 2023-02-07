@@ -1,12 +1,15 @@
 #include <iostream>
 #include <sstream>
+
 using namespace std;
 
 
+double product_prices[4];
+string product_names[4];
 int main()
 {
-    string product_names[4];
-    double product_prices[4];
+    
+   
 
     for (int i = 0; i < 4; i++)
     {
@@ -22,44 +25,8 @@ int main()
     double money;
     cout << "How much money you got bru?\n";
     cin >> money;
-    string temp;
-    double dtemp;
-    while (true)
-    {
-        if (product_prices[2] < product_prices[3])
-        {
-            
-            dtemp = product_prices[2]; product_prices[2] = product_prices[3];
-            product_prices[3] = dtemp;
-            temp = product_names[2]; product_names[2] = product_names[3];
-            product_names[3] = temp;
-        }
-        if(product_prices[1] < product_prices[2])
-        {
-            dtemp = product_prices[1]; product_prices[1] = product_prices[2];
-            product_prices[2] = dtemp;
-            temp = product_names[1]; product_names[1] = product_names[2];
-            product_names[2] = temp;
-        }
-        if (product_prices[0] < product_prices[1])
-        {
-            dtemp = product_prices[0]; product_prices[0] = product_prices[1];
-            product_prices[1] = dtemp;
-            temp = product_names[0]; product_names[0] = product_names[1];
-            product_names[1] = temp;
-        }
-        if (product_prices[0] > product_prices[1] && product_prices[1] > product_prices[2]&& product_prices[2] > product_prices[3])
-        {
-            break;
-        }
-        else
-        {
-            cout << "sorting \n";
-        }
-    }
 
-    int input = 0;
-
+	int input = 0;
     while (money > product_prices[3])
     {
         cout << "whatchu wanna buy?\n";
