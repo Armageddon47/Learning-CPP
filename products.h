@@ -9,5 +9,6 @@ extern double productPrices[productCount];
 
 void DisplayProducts();
 void GetProductNames();
+void Purchase();
 
 #endif
