@@ -21,10 +21,16 @@
     <ClCompile Include="product.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="struct.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="product.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
