@@ -29,6 +29,7 @@ struct Products
 		cout << "Price?\n";
 		cin >> temp.Price;
 		cout << temp.Name << "\t" << temp.Price << "Added";
+		cin.ignore();
 		return temp;
 	}
 
@@ -47,7 +48,7 @@ void DisplayProducts(vector<Products>temp)
 		i++;
 	}
 }
-Products SortItems(vector<Products>temp)
+vector<Products> SortItems(vector<Products>temp)
 {
 	int i = 0;
 	Products expensive = temp[0];
@@ -61,16 +62,48 @@ Products SortItems(vector<Products>temp)
 				expensive = temp[i];
 			}
 		}
-		output.push_
+		if (output.size() < temp.size())
+			output.push_back(expensive);
+		else
+			break;
+		expensive.Price = 0;
 	}
+	return output;
 }
+
 int main()
 {
-	State state = Display;
+	State state = Add;
 	vector<Products> products;
+	Products temp;
 
+	while(true)
+	{
+		while (state != Exit)
+		{
+			char input;
+
+			cout << "1 for add 2 for sort 3 for dispaly 4 to exit";
+			cin >> input;
+			if (input == '1')
+				state = Add;
+			else if (input == '2')
+				state = Sort;
+			else if (input == '3')
+				state = Display;
+			else
+				state = Exit;
+			switch (state)
+			{
+			case Add: temp.AddItem(); products.push_back(temp); break;
+			case Display: DisplayProducts(products); break;
+			case Sort: SortItems(products); break;
+
+			}
+		}
+	}
 	//adding items
-	while (true)
+	/*while (true)
 	{
 		Products temp;
 		char input;
@@ -83,10 +116,10 @@ int main()
 		}
 		else
 			break;
-	}
+	}*/
     
-    SortProducts();
-    Purchase();
+    
+    //Purchase();
     
 
 
